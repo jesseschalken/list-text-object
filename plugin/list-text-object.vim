@@ -1,4 +1,3 @@
-
 " E = { } < > [ ] ( )
 " S = , . / : ; + - * %
 " 
@@ -93,7 +92,7 @@ function! s:get_object(start, middle, end, inner)
   " do at the start...
   if !a:inner && end != [0,0] && !s:is_pattern_at_pos(end_of_middle, end)
     " ...set the start position to instead include the previous seperator.
-    let start = searchpairpos(end_of_start, start_of_middle, start_of_end, 'cWnb')
+    let start = searchpairpos(end_of_start, start_of_middle, start_of_end, 'cWnb', s_skip)
   endif
 
   return [start, end]
